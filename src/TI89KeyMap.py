@@ -1,53 +1,53 @@
-encodeDict = {'a': '=', 'b': '(', 'c': ')', 'd': ',', 'e': '/', 'f': '|', 'g': '7', 'h': '8', 'i': '9', 'j': '*',
+encode_dict = {'a': '=', 'b': '(', 'c': ')', 'd': ',', 'e': '/', 'f': '|', 'g': '7', 'h': '8', 'i': '9', 'j': '*',
                   'k': '<', 'l': '4', 'm': '5', 'n': '6', 'o': '-', 'p': ';', 'q': '1', 'r': '2', 's': '3', 't': 't',
                   'u': '+', 'v': '0', 'w': '.', 'x': 'x', 'y': 'y', 'z': 'z', '.': '>', ',': '[', ' ': ']'}
 
-decodeDict = {'=': 'a', '(': 'b', ')': 'c', ',': 'd', '/': 'e', '|': 'f', '7': 'g', '8': 'h', '9': 'i', '*': 'j',
+decode_dict = {'=': 'a', '(': 'b', ')': 'c', ',': 'd', '/': 'e', '|': 'f', '7': 'g', '8': 'h', '9': 'i', '*': 'j',
                   '<': 'k', '4': 'l', '5': 'm', '6': 'n', '-': 'o', ';': 'p', '1': 'q', '2': 'r', '3': 's', 't': 't',
                   '+': 'u', '0': 'v', '.': 'w', 'x': 'x', 'y': 'y', 'z': 'z', '>': '.', '[': ',', ']': ' '}
 
 
-def encodeChar(char):
+def encode_char(char):
 
-    return encodeDict[char]
-
-
-def decodeChar(char):
-
-    return decodeDict[char]
+    return encode_dict[char]
 
 
-def encodeString(string):
+def decode_char(char):
 
-    encodedString = ''
-
-    for i in range(0, len(string)):
-
-        encodedString += encodeChar(string[i])
-
-    return encodedString
+    return decode_dict[char]
 
 
-def decodeString(string):
+def encode_string(string):
 
-    decodedString = ''
+    encoded_string = ''
 
     for i in range(0, len(string)):
 
-        decodedString += decodeChar(string[i])
+        encoded_string += encode_char(string[i])
 
-    return decodedString
+    return encoded_string
 
 
-StringToEncode = 'hello'
+def decode_string(string):
 
-print(StringToEncode)
+    decoded_string = ''
 
-ECString = encodeString(StringToEncode)
+    for i in range(0, len(string)):
 
-print(ECString)
+        decoded_string += decode_char(string[i])
 
-StringToDecode =ECString
-DCString = decodeString(StringToDecode)
+    return decoded_string
 
-print(DCString)
+
+string_to_encode = 'hello'
+
+print(string_to_encode)
+
+ec_string = encode_string(string_to_encode)
+
+print(ec_string)
+
+string_to_decode = ec_string
+dc_string = decode_string(string_to_decode)
+
+print(dc_string)
