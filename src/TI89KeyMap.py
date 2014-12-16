@@ -39,6 +39,37 @@ def decode_string(string):
     return decoded_string
 
 
+
+def run():
+
+    user_input = input("Welcome to the TI-89 Encoder and Decoder! "
+                       "Would you like to encode(1) or decode(2) or quit(q)?: ")
+
+    if user_input == "1":
+
+        string_to_encode = input("What string would you like to encode? (lowercase, comma, and period only): ")
+
+        encoded_string = encode_string(string_to_encode)
+
+        print("Here is your encoded string: " + encoded_string)
+
+    elif user_input == "2":
+
+        string_to_decode = input("What string would you like to decode? (lowercase, comma, and period only): ")
+
+        decoded_string = decode_string(string_to_decode)
+
+        print("Here is your decoded string: " + decoded_string)
+
+    if user_input == "q":
+
+        return
+
+    run()
+
+
+run()
+"""
 string_to_encode = 'hello'
 
 print(string_to_encode)
@@ -50,4 +81,4 @@ print(ec_string)
 string_to_decode = ec_string
 dc_string = decode_string(string_to_decode)
 
-print(dc_string)
+print(dc_string)"""
