@@ -42,7 +42,7 @@ class encryption_engine():
 
         return decoded_string
 
-    def write_to_file(self, string):
+    def write_string_to_file(self, string):
 
         file_title = input("What would you like to call the file?: ") + '.txt'
 
