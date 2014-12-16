@@ -25,9 +25,12 @@ def main():
 
     elif user_input == "3":
 
-        file_to_encode = input("What file would you like to encode?: ")
+        text_to_encode = input("What text would you like to encode?: ")
 
-        encoded_file = encryptor.encode_file(file_to_encode)
+        encoded_text = encryptor.encode_string(text_to_encode)
+
+        encryptor.write_to_file(encoded_text)
+
 
         print("Your file has been encoded!")
 

@@ -18,11 +18,9 @@ class encryption_engine():
 
         return encryption_engine.encode_dict[char]
 
-
     def decode_char(self, char):
 
         return encryption_engine.decode_dict[char]
-
 
     def encode_string(self, string):
 
@@ -34,7 +32,6 @@ class encryption_engine():
 
         return encoded_string
 
-
     def decode_string(self, string):
 
         decoded_string = ''
@@ -45,18 +42,17 @@ class encryption_engine():
 
         return decoded_string
 
-    def encode_file(self, file): # This doesnt work
+    def write_to_file(self, string):
 
-        file = open(file, "w")
+        file_title = input("What would you like to call the file?: ") + '.txt'
 
-        file_string = file.read()
+        file = open(file_title, "w")
 
-        encoded_file_string = self.encode_string(file_string)
-
-        encoded_formatted = encoded_file_string.replace('_', '\n')
-
-        file.write(encoded_formatted)
+        file.write(string)
 
         file.close()
+
+
+
 
 
