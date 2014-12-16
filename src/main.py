@@ -1,16 +1,19 @@
 from src import encryption_engine
 
-encryptor = encryption_engine.encryption_engine()
+encryptor = encryption_engine.EncryptionEngine()
+
 
 def main():
 
     user_input = input("Welcome to the TI-89 Encryptor! "
-                       "Would you like to encode a string(1), decode a string(2), encode a .txt file(3), decode a .txt file(4) or quit(q)?: ")
+                       "Would you like to encode a string(1), decode a string(2),"
+                       "encode a .txt file(3), decode a .txt file(4) or quit(q)?: ")
 
     if user_input == "1":
 
         print()
-        string_to_encode = input("What string would you like to encode? (lowercase, comma, and period only): ")
+        string_to_encode = input("What string would you like to encode? (Upper or"
+                                 "lowercase and comma, or period only): ")
 
         encoded_string = encryptor.encode_string(string_to_encode)
 
@@ -60,6 +63,7 @@ def main():
         print("Your file has been encoded!")
 
     elif user_input == "q":
+
         print()
         print("We hope you enjoyed using the Encryptor!")
         return
