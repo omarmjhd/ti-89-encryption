@@ -1,13 +1,13 @@
-from src import encryption_engine
+from src import EncryptionEngine
 
-encryptor = encryption_engine.EncryptionEngine()
+encryptor = EncryptionEngine.EncryptionEngine()
 
 
 def main():
 
     user_input = input("Welcome to the TI-89 Encryptor! "
                        "Would you like to encode a string(1), decode a string(2),"
-                       "encode a .txt file(3), decode a .txt file(4) or quit(q)?: ")
+                       " encode a .txt file(3), decode a .txt file(4) or quit(q)?: ")
 
     if user_input == "1":
 
@@ -53,14 +53,16 @@ def main():
     elif user_input == "3":
 
         print()
-        text_to_encode = input("What text would you like to encode?: ")
+        file = input("What is the title of your file?: ")
 
-        encoded_text = encryptor.encode_string(text_to_encode)
+        encryptor.encode_file(file)
 
-        encryptor.write_string_to_file(encoded_text)
+    elif user_input == "4":
 
         print()
-        print("Your file has been encoded!")
+        file = input("What is the title of your file?: ")
+
+        encryptor.decode_file(file)
 
     elif user_input == "q":
 
