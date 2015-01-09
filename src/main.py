@@ -2,6 +2,8 @@ from src import EncryptionEngine
 
 encryptor = EncryptionEngine.EncryptionEngine()
 
+#Update these all to have only function calls. Make the Encryption
+#Engine do all the functionality, main should just run it
 
 def main():
 
